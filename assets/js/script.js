@@ -100,6 +100,8 @@ const filterFunc = function (selectedValue) {
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
+const professionalGroup = document.querySelector(".professional-group");
+const personalGroup = document.querySelector(".personal-group");
 
 for (let i = 0; i < filterBtn.length; i++) {
 
@@ -108,6 +110,19 @@ for (let i = 0; i < filterBtn.length; i++) {
     let selectedValue = this.innerText.toLowerCase();
     if (selectValue) selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
+
+    if (professionalGroup && personalGroup) {
+      if (selectedValue === "professional") {
+        professionalGroup.classList.remove("is-hidden");
+        personalGroup.classList.add("is-hidden");
+      } else if (selectedValue === "personal") {
+        professionalGroup.classList.add("is-hidden");
+        personalGroup.classList.remove("is-hidden");
+      } else {
+        professionalGroup.classList.remove("is-hidden");
+        personalGroup.classList.remove("is-hidden");
+      }
+    }
 
     if (lastClickedBtn) lastClickedBtn.classList.remove("active");
     this.classList.add("active");

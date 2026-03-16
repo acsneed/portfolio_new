@@ -1171,6 +1171,8 @@ img[src*="icon-quote.svg"] {
   opacity: 0.9;
 }
 
+.is-hidden { display: none !important; }
+
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-5);
@@ -1406,7 +1408,6 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #PORTFOLIO, BLOG 
    */
 
-  .project-img,
   .blog-banner-box { height: auto; }
 
 }
